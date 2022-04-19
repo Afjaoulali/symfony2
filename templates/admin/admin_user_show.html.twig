@@ -1,0 +1,31 @@
+{% extends "admin/base.html.twig" %}
+
+{% block main %}
+	<table class="table container">
+		<thead>
+			<tr>
+				<th>Id membre</th>
+				<th>Pseudo</th>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Email</th>
+				<th>Civilité</th>
+				<th>Statut</th>
+				<th>Date d'enregistrement</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td scope="row">{{ user.id }}</td>
+				<td scope="row">{{ user.pseudo }}</td>
+				<td scope="row">{{ user.nom }}</td>
+				<td scope="row">{{ user.prenom }}</td>
+				<td scope="row">{{ user.email }}</td>
+				<td scope="row">{{ user.civilite }}</td>
+				<td scope="row">{{ user.statut }}</td>
+				<td scope="row">{{ user.dateEnregistrement | date('d-m-Y h:m') }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "front/base.html.twig" %}
+
+
+{% block main %}
+
+	<div class="">
+    <img class="img-fluid" src="{{asset('media/slide.png')}}" alt="fond d'écran " width="100%">
+    <div class="texte_center">
+        <h1>Bienvenue à bord</h1>
+        <h2>Location de voiture 24h/24 et 7j/7.</h2>
+    </div>
+</div>
+
+<style>
+.img-fluid {
+  position: relative;
+  color: black;
+}
+
+.texte_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+</style>
+{% endblock %}
+

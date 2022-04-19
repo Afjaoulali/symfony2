@@ -1,0 +1,59 @@
+{% extends "admin/base.html.twig" %}
+
+{% block main %}
+<div class="table container">
+	<a href="{{ path('admin_create_vehicule') }}">Créer une véhicule</a>
+
+</div>
+
+	<div>
+		<table class="table container">
+
+			<thead>
+				<tr>
+
+					<th scope="col">Vehicule</th>
+					<th scope="col">Titre</th>
+					<th scope="col">Marque</th>
+					<th scope="col">Modèle</th>
+					<th scope="col">Description</th>
+					<th scope="col">Photo</th>
+					<th scope="col">Prix</th>
+					<th scope="col">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				{% for vehicule in vehicules %}
+					<tr>
+						<td scope="row">{{ vehicule.id }}</td>
+						<td scope="row">
+							<a href="{{ path('admin_show_vehicule', {'id' : vehicule.id } ) }}">{{ vehicule.titre }}</a>
+						</td>
+						<td scope="row">{{ vehicule.marque }}</td>
+						<td scope="row">{{ vehicule.modele }}</td>
+						<td scope="row">{{ vehicule.description }}</td>
+						<td scope="row">
+							<img src="{{ asset("media/" ~ vehicule.photo)}}" alt="{{ vehicule.modele }}" class="img">
+						</td>
+						<td scope="row">{{ vehicule.prixJournalier }} €</td>
+
+						<td scope="row">
+							<a href="{{ path('admin_vehicule_update', {'id' : vehicule.id}) }}">
+								<i class="fa-solid fa-pen"></i>
+							</a>
+							<a href=" {{ path('admin_delete_vehicule', {'id' : vehicule.id}) }}">
+								<i class="fa-solid fa-trash"></i>
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+
+		</table>
+
+
+</div>
+
+{% endblock %}
+

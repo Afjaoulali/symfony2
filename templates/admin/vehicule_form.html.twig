@@ -1,0 +1,32 @@
+{% extends "admin/base.html.twig" %}
+
+{% block main %}
+
+	{{ form_start(vehiculeForm) }}
+
+	{{ form_label(vehiculeForm.titre, 'Titre de la véhicule : ') }}
+	{{ form_widget(vehiculeForm.titre) }}
+
+    {{ form_label(vehiculeForm.marque, 'Marque de la véhicule : ') }}
+	{{ form_widget(vehiculeForm.marque) }}
+
+    {{ form_label(vehiculeForm.modele, 'Modele de la véhicule : ') }}
+	{{ form_widget(vehiculeForm.modele) }}
+
+	{{ form_label(vehiculeForm.description, 'Description de la véhicule : ') }}
+	{{ form_widget(vehiculeForm.description) }}
+
+    {{ form_label(vehiculeForm.photo, 'Photo de la véhicule : ') }}
+	{{ form_widget(vehiculeForm.photo) }}
+
+    {{ form_label(vehiculeForm.prix_journalier, 'Prix journalier de la véhicule : ') }}
+	{{ form_widget(vehiculeForm.prix_journalier) }}
+
+	{{ form_label(vehiculeForm.date_enregistrement, "Date d'enregistrement de la véhicule : ") }}
+	{{ form_widget(vehiculeForm.date_enregistrement) }}
+
+	{{ form_widget(vehiculeForm.Enregistrer) }}
+
+	{{ form_end(vehiculeForm) }}
+
+{% endblock %}

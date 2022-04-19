@@ -1,0 +1,21 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+<div class="container ">
+	<table class="table">
+		{% for vehicule in vehicules %}
+		<tr  class="col">
+			<td  rowspan="3" class="row"><img  class=" w-50 "src="{{ asset("media/" ~ vehicule.photo)}}" alt="{{ vehicule.modele }}"> </td>
+			<td  class="text-right">{{ vehicule.titre }} <br> {{ vehicule.description }}<br> {{ vehicule.prixJournalier }} € <br> <a class="btn btn-success" href="{{ path('show_vehicule', {'id' : vehicule.id } ) }}">Plus d'info</a></td>
+		</tr>
+
+		{% endfor %}
+
+	</table>
+</div>
+
+<style>
+
+</style>
+
+{% endblock %}

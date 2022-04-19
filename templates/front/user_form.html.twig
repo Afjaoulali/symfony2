@@ -1,0 +1,73 @@
+
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+    <div class="main">
+
+        <div class="container">
+		<form class="appointment-form">
+
+	{{form_start(userForm)}}
+	<div class="form-group-1">
+
+    {{ form_label(userForm.pseudo ) }}
+	{{form_widget(userForm.pseudo, {'attr' : {'class' : 'input', 'placeholder' : 'Votre pseudo'} } )}}
+
+    {{ form_label(userForm.civilite) }}
+	{{form_widget(userForm.civilite, {'attr' : {'class' : 'input', 'placeholder' : 'Votre civilité'} })}}
+
+	{{form_label(userForm.nom)}}
+	{{form_widget(userForm.nom, {'attr' : {'class' : 'input', 'placeholder' : 'Votre nom'} })}}
+	{{form_label(userForm.prenom)}}
+	{{form_widget(userForm.prenom, {'attr' : {'class' : 'input', 'placeholder' : 'Votre nom'} })}}
+
+	{{form_label(userForm.email )}}
+	{{ form_widget(userForm.email, {'attr' : {'class' : 'input', 'placeholder' :'Votre email'} }) }}
+
+
+	{{form_label(userForm.password)}}
+	{{form_widget(userForm.password, {'attr' : {'class' : 'input','placeholder' : 'Votre mot de passe'} })}}
+
+	{{form_label(userForm.date_enregistrement, "Date d'enregistrement de la véhicule : ")}}
+	{{form_widget(userForm.date_enregistrement, {'attr' : {'class' : 'input'} })}}
+
+    </div>
+    <div class="form-submit">
+	{{form_widget(userForm.Enregistrer, {'attr' : {'class' : 'submit'} })}}
+
+	{{form_end(userForm)}}
+	</form>
+      </div>
+
+    </div>
+
+	<style>
+      input{
+    outline: none;
+    appearance: unset !important;
+    -moz-appearance: unset !important;
+    -webkit-appearance: unset !important;
+    -o-appearance: unset !important;
+    -ms-appearance: unset !important; }
+
+      body {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #fff;
+    background-image: url('{{ asset("media/usages-dans-votre-centre-ville1.jpg")}}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-position: center center;
+    font-weight: 400;
+    font-family: 'Roboto Slab';
+    margin: 0px; }
+    </style>
+
+
+
+
+{% endblock %}

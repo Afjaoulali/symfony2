@@ -1,0 +1,27 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+admin_list_vehicule:
+  path: /admin/vehicules
+  controller: App\Controller\Admin\AdminVehiculeController::listVehicule
+
+admin_show_vehicule:
+  path: /admin/vehicule/{id}
+  controller: App\Controller\Admin\AdminVehiculeController::showVehicule
+
+admin_create_vehicule:
+  path: /admin/create/vehicule
+  controller: App\Controller\Admin\AdminVehiculeController::createVehicule
+
+admin_vehicule_update:
+  path: /admin/update/vehicule/{id}
+  controller: App\Controller\Admin\AdminVehiculeController::updateVehicule
+
+admin_delete_vehicule:
+  path: /admin/delete/vehicule/{id}
+  controller: App\Controller\Admin\AdminVehiculeController::deleteVehicule

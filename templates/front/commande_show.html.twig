@@ -1,0 +1,25 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+<table class="table container">
+    <thead>
+        <tr>
+					<th scope="col">Véhicule</th>
+					<th scope="col">Date et heure de départ</th>
+					<th scope="col">Date et heure de fin</th>
+					<th scope="col">Prix total</th>
+					<th scope="col">Date et heure d'enregistrement'</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+                        <td scope="row">{{ commande.vehicule.titre }}</td>
+						<td scope="row">{{ commande.dateHeureDepart | date('d-m-Y h:m')  }} €</td>
+						<td scope="row">{{ commande.dateHeureFin | date('d-m-Y h:m') }} €</td>
+						<td scope="row">{{ commande.prixTotal }}</td>
+						<td scope="row">{{ commande.dateEnregistrement | date('d-m-Y h:m') }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "admin/base.html.twig" %}
+
+{% block main %}
+	<table class="table container">
+		<thead>
+			<tr>
+					<th>Vehicule</th>
+					<th>Titre</th>
+					<th>Marque</th>
+					<th>Modèle</th>
+					<th>Description</th>
+					<th>Photo</th>
+					<th>Prix</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td scope="row">{{ vehicule.id }}</td>
+				<td scope="row">{{ vehicule.titre}}</td>
+				<td scope="row">{{ vehicule.marque }}</td>
+				<td scope="row">{{ vehicule.modele }}</td>
+				<td scope="row">{{ vehicule.description }}</td>
+				<td scope="row"><img  class=" w-50 "src="{{ asset("media/" ~ vehicule.photo)}}" alt="{{ vehicule.modele }}"></td>
+				<td scope="row">{{ vehicule.prixJournalier }} €</td>
+			</tr>
+		</tbody>
+	</table>
+
+{% endblock %}

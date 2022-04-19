@@ -1,0 +1,31 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+
+	<div class="container ">
+		<h5>Les véhicules qui correspondent à votre recherche "{{ term }}" sont :
+		</h5>
+		{% for vehicule in vehicules %}
+			<a href="{{ path("show_vehicule", {'id' : vehicule.id } ) }}">
+				<table class="table">
+					<tr class="col">
+						<td rowspan="3" class="row"><img class=" w-50 " src="{{ asset("media/" ~ vehicule.photo)}}" alt="{{ vehicule.modele }}">
+						</td>
+						<td class="text-right">{{ vehicule.titre }}
+							<br>
+							{{ vehicule.description }}<br>
+							{{ vehicule.prixJournalier }}
+							€
+							<br>
+							<a class="btn btn-primary" id="btn-primary" href="{{ path('show_vehicule', {'id' : vehicule.id } ) }}">Plus d'info</a>
+							<a class="btn btn-success" href="{{ path('create_commande', {'id' : vehicule.id } ) }}">Passer une commande</a>
+						</td>
+					</tr>
+
+				</table>
+			</div>
+		</a>
+	{% endfor %}
+
+
+{% endblock %}

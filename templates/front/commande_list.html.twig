@@ -1,0 +1,47 @@
+{% extends "front/base.html.twig" %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="">
+{% endblock %}
+
+{% block main %}
+	<div class="container">
+
+		<a href="{{ path('create_commande')}}">Passer une Commande</a>
+
+	</div>
+	<div class="container">
+		<h3>Mes commandes</h3>
+
+		<table class="table">
+			<thead>
+				<tr>
+
+					<th scope="col">Véhicule</th>
+					<th scope="col">Date et heure de départ</th>
+					<th scope="col">Date et heure de fin</th>
+					<th scope="col">Prix total</th>
+					<th scope="col">Date et heure d'enregistrement'</th>
+				</tr>
+			</thead>
+			{% for commande in commandes %}
+				<tbody>
+					<tr>
+						<td scope="row">{{ commande.vehicule.titre }}</td>
+						<td scope="row">{{ commande.dateHeureDepart | date('d-m-Y h:m')  }}
+						</td>
+						<td scope="row">{{ commande.dateHeureFin | date('d-m-Y h:m') }}
+						</td>
+						<td scope="row">{{ commande.prixTotal }}
+							€</td>
+						<td scope="row">{{ commande.dateEnregistrement | date('d-m-Y h:m') }}</td>
+					</tr>
+				{% endfor %}
+
+			</tbody>
+
+		</div>
+
+
+	{% endblock %}
+
